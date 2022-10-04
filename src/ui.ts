@@ -16,9 +16,10 @@ export class SampleModal extends Modal {
     }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class OptionsModal extends SuggestModal<string> {
     options: string[] = [];
-    selectedItem: string = "";
+    selectedItem = "";
 
     constructor(app: App, private optionsArr: string[]) {
         super(app);
@@ -59,7 +60,7 @@ class OptionsModal extends SuggestModal<string> {
     }
 
     lightenBackground() {
-        let modalBg: HTMLElement = this.containerEl.querySelector('.modal-bg') as HTMLElement;
+        const modalBg: HTMLElement = this.containerEl.querySelector('.modal-bg') as HTMLElement;
         if (modalBg) {
             modalBg.style.backgroundColor = '#00000029';
         }

@@ -6,12 +6,13 @@ export function mySetIntervalFunction(plugin: MyPlugin, interval: number): void 
     console.log(`[${formatDate()}] setIntervalId: ${interval} for plugin: ${plugin.pluginName}`);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function getFileStats(plugin: Plugin, filePath: string): Promise<Stat | null> {
     const fileStats = await plugin.app.vault.adapter.stat(filePath);
     return fileStats;
 }
 
-export function formatDate(dateTimeNumber: number | Date = new Date(), formatStr: string = "YYYY-MM-DD hh:mm.ss A"): string {
+export function formatDate(dateTimeNumber: number | Date = new Date(), formatStr = "YYYY-MM-DD hh:mm.ss A"): string {
     let dateTime: Date;
     if (typeof dateTimeNumber === "number") {
         dateTime = new Date(dateTimeNumber);
@@ -50,7 +51,7 @@ export function isObsidianSyncLoaded(plugin: Plugin): boolean {
     return isSyncLoaded;
 }
 
-export function createRandomHashId(charCt: number = 7): string {
+export function createRandomHashId(charCt = 7): string {
     let result = '';
     const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
     const charactersLength = characters.length;
